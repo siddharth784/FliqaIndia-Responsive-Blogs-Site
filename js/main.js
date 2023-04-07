@@ -1,5 +1,11 @@
 // filter js 
 $(document).ready(function(){
+    //add active to btn
+    $('.filter-item').click(function(){
+        $(this).addClass("active-filter").siblings().removeClass("active-filter");
+    });
+   
+    //show posts of selected category not others
     $(".filter-item").click(function(){
         const value = $(this).attr('data-filter');
         if(value == 'all'){
@@ -9,10 +15,6 @@ $(document).ready(function(){
             $('.post-box').not('.'+value).hide('1000');
             $('.post-box').filter('.'+value).show('1000');
         }
-    });
-    //add active to btn
-    $('.filter-item').click(function(){
-        $(this).addClass("active-filter").siblings().removeClass("active-filter");
     });
 });
 
